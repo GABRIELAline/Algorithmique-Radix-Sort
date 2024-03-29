@@ -28,7 +28,6 @@ countingSortAlgo <- function(arr, position) {
 
     count[element %% 10 + 1] <- count[element %% 10 + 1] + 1
   }
-  print(count)
   # Comptage cumulatif
   for(j in 2:10) {
     count[j] <- count[j] + count[j - 1]
@@ -55,7 +54,6 @@ radixSortAlgo <- function(arr) {
 
   while(maximum %/% position > 0) { # on se déplace en fonction du max
     arr <- countingSortAlgo(arr, position)
-    print(arr)
     position <- position * 10
   }
 
