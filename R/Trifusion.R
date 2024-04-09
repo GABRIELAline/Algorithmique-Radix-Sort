@@ -37,14 +37,14 @@ Fusion <- function(gauche, droite) {
 #' @examples
 #' arr <- c(38, 27, 43, 3, 9, 82, 10)
 #' TriFusion(arr)
-TriFusion <- function(tableau) {
+TriFusion <- function(arr) {
   # Condition de base : si le tableau a 1 ou aucun élément, il est déjà trié
-  if (length(tableau) <= 1) {
-    return(tableau)
+  if (length(arr) <= 1) {
+    return(arr)
   }
-  milieu <- floor(length(tableau) / 2)  # Trouve le milieu du tableau
-  gauche <- tableau[1:milieu]  # Divise le tableau en deux moitiés
-  droite <- tableau[(milieu + 1):length(tableau)]
+  milieu <- floor(length(arr) / 2)  # Trouve le milieu du tableau
+  gauche <- arr[1:milieu]  # Divise le tableau en deux moitiés
+  droite <- arr[(milieu + 1):length(arr)]
 
   # Tri récursivement les deux moitiés
   gauche <- TriFusion(gauche)

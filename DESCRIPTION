@@ -1,18 +1,14 @@
 Package: RadixSort
 Type: Package
-Title: What the Package Does (Title Case)
+Title:  Radix Sort/Tri par base
 Version: 0.1.0
-Authors: c(
-  person("Aline", "GABRIEL"),
-  person("Alimatou", "TRAORE"),
-  person(family = "Master 2 data science Université Paris Saclay")
-  )
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: person("Aline", "GABRIEL",Alimatou", "TRAORE")
+Maintainer: Le mainteneur du package <yourself@somewhere.net>
+Description: Ce package RadixSort est un package R fournissant une implémentation ( R et Rcpp ) de l'algorithme de tri par base. 
+    Le tri par base est un algorithme de tri d'entiers non comparatif.
+    Par ailleurs ce package contient aussi une implémentation du tri par fusion ( R et Rcpp ) algorithme comparatif.
+License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Imports: Rcpp (>= 1.0.11)
 LinkingTo: Rcpp
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
