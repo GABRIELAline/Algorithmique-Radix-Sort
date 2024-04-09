@@ -60,22 +60,28 @@ IntegerVector rcpp_countingSort(IntegerVector arr, int position) {
   return arr;
 }
 
-
-// Fonction de tri Radix Sort
-// Cette fonction trie un vecteur d'entiers en utilisant l'algorithme Radix Sort
-// arr : vecteur d'entiers à trier
+//' Fonction de tri Radix Sort (implémenté en C++)
+//'
+//' Cette fonction trie un vecteur d'entiers en utilisant l'algorithme Radix Sort.
+//'
+//' @param arr Le vecteur d'entiers à trier.
+//' @return Le vecteur d'entiers trié.
+//' @examples
+//' arr <- c(170, 45, 75, 90, 802, 24, 2, 66)
+//' rcpp_RadixSort(arr)
+//' @export
 // [[Rcpp::export]]
-IntegerVector rcpp_RadixSort(IntegerVector arr) {
-  int maximum = max(arr); // chiffre max dans le vecteur
-  int position = 1;
+ IntegerVector rcpp_RadixSort(IntegerVector arr) {
+   int maximum = max(arr); // chiffre max dans le vecteur
+   int position = 1;
 
-  while(maximum / position > 0) { // on se déplace en fonction du max
-    arr = rcpp_countingSort(arr, position);
-    position *= 10;
-  }
+   while(maximum / position > 0) { // on se déplace en fonction du max
+     arr = rcpp_countingSort(arr, position);
+     position *= 10;
+   }
 
-  return arr;
-}
+   return arr;
+ }
 
 
 

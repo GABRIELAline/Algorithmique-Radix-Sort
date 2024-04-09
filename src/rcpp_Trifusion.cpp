@@ -30,8 +30,20 @@ NumericVector rcpp_fusion(NumericVector gauche, NumericVector droite) {
 }
 
 
-
-
+//' Tri par fusion (implémenté en C++)
+//'
+//' Cette fonction trie un vecteur d'entiers en utilisant l'algorithme de tri fusion.
+//'
+//' @param tableau Le vecteur d'entiers à trier.
+//' @return Le vecteur d'entiers trié.
+//' @details L'algorithme de tri fusion est un algorithme de tri efficace
+//' et stable qui divise le vecteur en deux moitiés, trie récursivement
+//' chaque moitié, puis fusionne les deux moitiés triées pour produire
+//' le résultat final trié.
+//' @examples
+//' tableau <- c(38, 27, 43, 3, 9, 82, 10)
+//' rcpp_TriFusion(tableau)
+//' @export
 // [[Rcpp::export]]
 NumericVector rcpp_TriFusion(NumericVector tableau) {
   int n = tableau.size();

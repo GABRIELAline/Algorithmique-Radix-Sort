@@ -9,6 +9,16 @@ rcpp_countingSort <- function(arr, position) {
     .Call(`_RadixSort_rcpp_countingSort`, arr, position)
 }
 
+#' Fonction de tri Radix Sort (implémenté en C++)
+#'
+#' Cette fonction trie un vecteur d'entiers en utilisant l'algorithme Radix Sort.
+#'
+#' @param arr Le vecteur d'entiers à trier.
+#' @return Le vecteur d'entiers trié.
+#' @examples
+#' arr <- c(170, 45, 75, 90, 802, 24, 2, 66)
+#' rcpp_RadixSort(arr)
+#' @export
 rcpp_RadixSort <- function(arr) {
     .Call(`_RadixSort_rcpp_RadixSort`, arr)
 }
@@ -17,6 +27,20 @@ rcpp_fusion <- function(gauche, droite) {
     .Call(`_RadixSort_rcpp_fusion`, gauche, droite)
 }
 
+#' Tri par fusion (implémenté en C++)
+#'
+#' Cette fonction trie un vecteur d'entiers en utilisant l'algorithme de tri fusion.
+#'
+#' @param tableau Le vecteur d'entiers à trier.
+#' @return Le vecteur d'entiers trié.
+#' @details L'algorithme de tri fusion est un algorithme de tri efficace
+#' et stable qui divise le vecteur en deux moitiés, trie récursivement
+#' chaque moitié, puis fusionne les deux moitiés triées pour produire
+#' le résultat final trié.
+#' @examples
+#' tableau <- c(38, 27, 43, 3, 9, 82, 10)
+#' rcpp_TriFusion(tableau)
+#' @export
 rcpp_TriFusion <- function(tableau) {
     .Call(`_RadixSort_rcpp_TriFusion`, tableau)
 }
