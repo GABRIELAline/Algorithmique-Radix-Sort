@@ -1,23 +1,4 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Install Package:           'Ctrl + Shift + B'
-#   Check Package:             'Ctrl + Shift + E'
-#   Test Package:              'Ctrl + Shift + T'
-
-hello <- function() {
-  print("Hello, world!")
-}
-
-countingSortAlgo <- function(arr, position) {
+CountingSort <- function(arr, position) {
   n <- length(arr)
   result <- numeric(n)
   count <- numeric(10) # Initialise le vecteur de comptage avec des zéros
@@ -48,12 +29,24 @@ countingSortAlgo <- function(arr, position) {
   arr
 }
 
-radixSortAlgo <- function(arr) {
+#' Tri par Radix Sort
+#'
+#' Cette fonction trie un vecteur d'entiers en utilisant l'algorithme Radix Sort.
+#'
+#' @param arr Le vecteur d'entiers à trier.
+#' @return Le vecteur d'entiers trié.
+#' @details L'algorithme Radix Sort est un algorithme de tri non comparatif
+#' qui trie les éléments en examinant les chiffres de leurs représentations
+#' décimales.
+#' @examples
+#' arr <- c(170, 45, 75, 90, 802, 24, 2, 66)
+#' RadixSort(arr)
+RadixSort <- function(arr) {
   maximum <- max(arr) # chiffre max dans le vecteur
   position <- 1
 
   while(maximum %/% position > 0) { # on se déplace en fonction du max
-    arr <- countingSortAlgo(arr, position)
+    arr <- CountingSort(arr, position)
     position <- position * 10
   }
 

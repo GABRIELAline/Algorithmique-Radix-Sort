@@ -4,7 +4,7 @@
 ######## Fonction pour fusionner deux sous-tableaux  #############
 
 
-fusion <- function(gauche, droite) {
+Fusion <- function(gauche, droite) {
   resultat <- c()  # Crée un vecteur vide pour stocker le résultat
   while (length(gauche) > 0 && length(droite) > 0) {
     if (gauche[1] <= droite[1]) {
@@ -24,9 +24,20 @@ fusion <- function(gauche, droite) {
 
 #######  Fonction de tri fusion  ############
 
-
-
-triFusion <- function(tableau) {
+#' Tri par fusion
+#'
+#' Cette fonction trie un vecteur d'entiers en utilisant l'algorithme de tri fusion.
+#'
+#' @param arr Le vecteur d'entiers à trier.
+#' @return Le vecteur d'entiers trié.
+#' @details L'algorithme de tri fusion est un algorithme de tri efficace
+#' et stable qui divise le vecteur en deux moitiés, trie récursivement
+#' chaque moitié, puis fusionne les deux moitiés triées pour produire
+#' le résultat final trié.
+#' @examples
+#' arr <- c(38, 27, 43, 3, 9, 82, 10)
+#' TriFusion(arr)
+TriFusion <- function(tableau) {
   # Condition de base : si le tableau a 1 ou aucun élément, il est déjà trié
   if (length(tableau) <= 1) {
     return(tableau)
@@ -36,11 +47,11 @@ triFusion <- function(tableau) {
   droite <- tableau[(milieu + 1):length(tableau)]
 
   # Tri récursivement les deux moitiés
-  gauche <- triFusion(gauche)
-  droite <- triFusion(droite)
+  gauche <- TriFusion(gauche)
+  droite <- TriFusion(droite)
 
   # Fusionne les deux moitiés triées
-  resultat <- fusion(gauche, droite)
+  resultat <- Fusion(gauche, droite)
   return(resultat)
 }
 

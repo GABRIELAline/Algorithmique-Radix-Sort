@@ -5,19 +5,19 @@ rcpp_hello <- function() {
     .Call(`_RadixSort_rcpp_hello`)
 }
 
-countingSortAlgoRcpp <- function(arr, position) {
-    .Call(`_RadixSort_countingSortAlgoRcpp`, arr, position)
+rcpp_countingSort <- function(arr, position) {
+    .Call(`_RadixSort_rcpp_countingSort`, arr, position)
 }
 
-radixSortAlgoRcpp <- function(arr) {
-    .Call(`_RadixSort_radixSortAlgoRcpp`, arr)
+rcpp_RadixSort <- function(arr) {
+    .Call(`_RadixSort_rcpp_RadixSort`, arr)
 }
 
-fusionRcpp <- function(gauche, droite) {
-    .Call(`_RadixSort_fusionRcpp`, gauche, droite)
+rcpp_fusion <- function(gauche, droite) {
+    .Call(`_RadixSort_rcpp_fusion`, gauche, droite)
 }
 
-triFusionRcpp <- function(tableau) {
-    .Call(`_RadixSort_triFusionRcpp`, tableau)
+rcpp_TriFusion <- function(tableau) {
+    .Call(`_RadixSort_rcpp_TriFusion`, tableau)
 }
 

@@ -20,59 +20,59 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// countingSortAlgoRcpp
-IntegerVector countingSortAlgoRcpp(IntegerVector arr, int position);
-RcppExport SEXP _RadixSort_countingSortAlgoRcpp(SEXP arrSEXP, SEXP positionSEXP) {
+// rcpp_countingSort
+IntegerVector rcpp_countingSort(IntegerVector arr, int position);
+RcppExport SEXP _RadixSort_rcpp_countingSort(SEXP arrSEXP, SEXP positionSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< IntegerVector >::type arr(arrSEXP);
     Rcpp::traits::input_parameter< int >::type position(positionSEXP);
-    rcpp_result_gen = Rcpp::wrap(countingSortAlgoRcpp(arr, position));
+    rcpp_result_gen = Rcpp::wrap(rcpp_countingSort(arr, position));
     return rcpp_result_gen;
 END_RCPP
 }
-// radixSortAlgoRcpp
-IntegerVector radixSortAlgoRcpp(IntegerVector arr);
-RcppExport SEXP _RadixSort_radixSortAlgoRcpp(SEXP arrSEXP) {
+// rcpp_RadixSort
+IntegerVector rcpp_RadixSort(IntegerVector arr);
+RcppExport SEXP _RadixSort_rcpp_RadixSort(SEXP arrSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< IntegerVector >::type arr(arrSEXP);
-    rcpp_result_gen = Rcpp::wrap(radixSortAlgoRcpp(arr));
+    rcpp_result_gen = Rcpp::wrap(rcpp_RadixSort(arr));
     return rcpp_result_gen;
 END_RCPP
 }
-// fusionRcpp
-NumericVector fusionRcpp(NumericVector gauche, NumericVector droite);
-RcppExport SEXP _RadixSort_fusionRcpp(SEXP gaucheSEXP, SEXP droiteSEXP) {
+// rcpp_fusion
+NumericVector rcpp_fusion(NumericVector gauche, NumericVector droite);
+RcppExport SEXP _RadixSort_rcpp_fusion(SEXP gaucheSEXP, SEXP droiteSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type gauche(gaucheSEXP);
     Rcpp::traits::input_parameter< NumericVector >::type droite(droiteSEXP);
-    rcpp_result_gen = Rcpp::wrap(fusionRcpp(gauche, droite));
+    rcpp_result_gen = Rcpp::wrap(rcpp_fusion(gauche, droite));
     return rcpp_result_gen;
 END_RCPP
 }
-// triFusionRcpp
-NumericVector triFusionRcpp(NumericVector tableau);
-RcppExport SEXP _RadixSort_triFusionRcpp(SEXP tableauSEXP) {
+// rcpp_TriFusion
+NumericVector rcpp_TriFusion(NumericVector tableau);
+RcppExport SEXP _RadixSort_rcpp_TriFusion(SEXP tableauSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericVector >::type tableau(tableauSEXP);
-    rcpp_result_gen = Rcpp::wrap(triFusionRcpp(tableau));
+    rcpp_result_gen = Rcpp::wrap(rcpp_TriFusion(tableau));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RadixSort_rcpp_hello", (DL_FUNC) &_RadixSort_rcpp_hello, 0},
-    {"_RadixSort_countingSortAlgoRcpp", (DL_FUNC) &_RadixSort_countingSortAlgoRcpp, 2},
-    {"_RadixSort_radixSortAlgoRcpp", (DL_FUNC) &_RadixSort_radixSortAlgoRcpp, 1},
-    {"_RadixSort_fusionRcpp", (DL_FUNC) &_RadixSort_fusionRcpp, 2},
-    {"_RadixSort_triFusionRcpp", (DL_FUNC) &_RadixSort_triFusionRcpp, 1},
+    {"_RadixSort_rcpp_countingSort", (DL_FUNC) &_RadixSort_rcpp_countingSort, 2},
+    {"_RadixSort_rcpp_RadixSort", (DL_FUNC) &_RadixSort_rcpp_RadixSort, 1},
+    {"_RadixSort_rcpp_fusion", (DL_FUNC) &_RadixSort_rcpp_fusion, 2},
+    {"_RadixSort_rcpp_TriFusion", (DL_FUNC) &_RadixSort_rcpp_TriFusion, 1},
     {NULL, NULL, 0}
 };
 

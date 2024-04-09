@@ -5,7 +5,7 @@ using namespace Rcpp;
 
 
 // [[Rcpp::export]]
-NumericVector fusionRcpp(NumericVector gauche, NumericVector droite) {
+NumericVector rcpp_fusion(NumericVector gauche, NumericVector droite) {
   int n_gauche = gauche.size(), n_droite = droite.size();
   NumericVector resultat(n_gauche + n_droite);
 
@@ -33,7 +33,7 @@ NumericVector fusionRcpp(NumericVector gauche, NumericVector droite) {
 
 
 // [[Rcpp::export]]
-NumericVector triFusionRcpp(NumericVector tableau) {
+NumericVector rcpp_TriFusion(NumericVector tableau) {
   int n = tableau.size();
   if (n <= 1) {
     return tableau;
@@ -43,10 +43,10 @@ NumericVector triFusionRcpp(NumericVector tableau) {
   NumericVector gauche = tableau[Range(0, milieu - 1)];
   NumericVector droite = tableau[Range(milieu, n - 1)];
 
-  gauche = triFusionRcpp(gauche);
-  droite = triFusionRcpp(droite);
+  gauche = rcpp_TriFusion(gauche);
+  droite = rcpp_TriFusion(droite);
 
-  return fusionRcpp(gauche, droite);
+  return rcpp_fusion(gauche, droite);
 }
 
 

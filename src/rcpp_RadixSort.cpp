@@ -29,7 +29,7 @@ List rcpp_hello() {
 // arr : vecteur d'entiers à trier
 // position : position actuelle dans le nombre (1, 10, 100, etc.)
 // [[Rcpp::export]]
-IntegerVector countingSortAlgoRcpp(IntegerVector arr, int position) {
+IntegerVector rcpp_countingSort(IntegerVector arr, int position) {
   int n = arr.size();
   IntegerVector result(n);
   IntegerVector count(10);
@@ -60,16 +60,17 @@ IntegerVector countingSortAlgoRcpp(IntegerVector arr, int position) {
   return arr;
 }
 
+
 // Fonction de tri Radix Sort
 // Cette fonction trie un vecteur d'entiers en utilisant l'algorithme Radix Sort
 // arr : vecteur d'entiers à trier
 // [[Rcpp::export]]
-IntegerVector radixSortAlgoRcpp(IntegerVector arr) {
+IntegerVector rcpp_RadixSort(IntegerVector arr) {
   int maximum = max(arr); // chiffre max dans le vecteur
   int position = 1;
 
   while(maximum / position > 0) { // on se déplace en fonction du max
-    arr = countingSortAlgoRcpp(arr, position);
+    arr = rcpp_countingSort(arr, position);
     position *= 10;
   }
 
