@@ -3,7 +3,7 @@ Type: Package
 Title:  Radix Sort/Tri par base
 Version: 0.1.0
 Author: person("Aline", "GABRIEL","Alimatou", "TRAORE")
-Maintainer: Aline GABRIEL <aline.gabriel.yu@gmail.com> et Alimatou TRAORE
+Maintainer: Aline GABRIEL et Alimatou TRAORE <aline.gabriel.yu@gmail.com>
 Description: Ce package RadixSort est un package R fournissant une implémentation ( R et Rcpp ) de l'algorithme de tri par base. 
     Le tri par base est un algorithme de tri d'entiers non comparatif.
     Par ailleurs ce package contient aussi une implémentation du tri par fusion ( R et Rcpp ) algorithme comparatif.
